@@ -9,18 +9,20 @@ document.querySelectorAll('#menu *').forEach((item) => {
 });
 
 
-function scrollToForm(button) {
-    const product = button.closest('.macaroon-card');
-    const macaroonTitle = product.querySelector('.macaroon-title').textContent;
-     document.getElementById('input-order').value = macaroonTitle;
-     document.querySelector('.order').scrollIntoView({ behavior: 'smooth' });
+function scrollToForm() {
+    // Находим название макаруна в родительском элементе .macaroon-card и устанавливаем его значение в поле #input-order
+    const macaroonTitle = $(this).closest('.macaroon-card').find('.macaroon-title').text();
+    $('#input-order').val(macaroonTitle);
+
+    // Плавно прокручиваем страницу до формы заказа с классом .order
+    $('html, body').animate({
+        scrollTop: $('.order').offset().top
+    }, 'smooth');
 }
 
-document.querySelectorAll('.btn-order').forEach(function(button) {
-    button.addEventListener('click', function() {
-        scrollToForm(this);
-    });
-});
+
+// Привязываем функцию к кнопкам
+$('.btn-order').on('click', scrollToForm);
 let loader = $('.loader');
 let formDelete = $('.order-macaroon');
 let popup = $('.popup')
