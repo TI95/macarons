@@ -1,0 +1,677 @@
+
+.main-container() {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 15px 0 15px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+@font-face {
+  font-family: Gilroy;
+  src: url("../fonts/Gilroy-Regular.ttf");
+}
+
+@font-face {
+  font-family: GilroyBold;
+  src: url("../fonts/Gilroy-Bold.ttf");
+}
+
+@font-face {
+  font-family: GilroyMedium;
+  src: url("../fonts/Gilroy-Medium.ttf");
+}
+
+@font-face {
+  font-family: GilroyExtraBold;
+  src: url("../fonts/Gilroy-ExtraBold.ttf");
+}
+
+@font-face {
+  font-family: Tavolga;
+  src: url("../fonts/tavolga-free.ttf");
+}
+
+body {
+  font-family: Gilroy, sans-serif;
+}
+
+
+.header {
+  background-color: @main-color;
+  padding: 36px 0 30px 0;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .main-container();
+
+    .menu-close {
+      display: none;
+    }
+
+    .menu-list {
+      list-style: none;
+      display: flex;
+      width: 312px;
+      justify-content: space-between;
+
+      li a {
+        text-decoration: none;
+        font-size: 14px;
+        font-family: GilroyMedium, sans-serif;
+        color: rgb(119, 11, 29);
+        text-align: center;
+        padding-bottom: 3px;
+        border-bottom: 2px solid transparent;
+        transition: border-bottom .3s;
+
+        &:hover {
+          border-bottom: 2px solid rgb(119, 11, 29);
+        }
+      }
+
+    }
+
+    .header-burger {
+      display: none;
+    }
+  }
+}
+
+.phone-number {
+  font-size: 16px;
+  font-family: GilroyBold, sans-serif;
+  color: @main-text-color;
+}
+
+.main {
+  background-color: @main-color;
+  padding-top: 126px;
+  overflow: hidden;
+  padding-bottom: 108px;
+
+  .container {
+    display: flex;
+    .main-container();
+
+    .main-info {
+      position: relative;
+      z-index: 2;
+
+      .main-title {
+        font-size: 55px;
+        margin-bottom: 60px;
+        font-family: Tavolga, sans-serif;
+        color: @main-text-color;
+        width: 580px;
+
+      }
+
+      .main-text {
+        font-size: 18px;
+        font-family: Tavolga, sans-serif;
+        color: @main-text-color;
+        line-height: 1.389;
+        max-width: 347px;
+        margin-bottom: 80px;
+      }
+    }
+
+    .main-img {
+      width: 529px;
+      position: relative;
+
+      img {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+      }
+
+      &::before, &::after {
+        content: '';
+        position: absolute;
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        animation: pulse 3s infinite;
+        border: 1px solid rgb(113, 8, 30);
+        top: 100px;
+        left: 150px;
+      }
+
+      &::after {
+        animation-delay: 0.5s;
+      }
+
+      @keyframes pulse {
+        from {
+          transform: scale(0);
+          opacity: 1;
+        }
+
+        to {
+          transform: scale(2.7);
+          opacity: 0;
+        }
+      }
+    }
+  }
+}
+
+
+.btn {
+  display: flex;
+  background-image: linear-gradient(90deg, rgb(215, 72, 92) 0%, rgb(113, 8, 30) 100%);
+  width: 240px;
+  font-size: 18px;
+  font-family: GilroyBold, sans-serif;
+  color: @main-text-color;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  padding: 19px 0;
+  justify-content: center;
+  transition: box-shadow .3s;
+
+  &:hover {
+    box-shadow: 0 5px 9px 1px rgba(130, 19, 40, 0.5);
+  }
+}
+
+
+.about-us {
+  background-color: @second-color;
+  padding-top: 119px;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    min-width: 0;
+    .main-container();
+ .about-us-texts{
+    .about-us-title {
+      font-size: 45px;
+      font-family: Tavolga, sans-serif;
+      color: @second-text;
+      width: 475px;
+      margin-bottom: 60px;
+
+      h2 {
+        font-size: 45px;
+        font-family: Tavolga, sans-serif;
+        color: @second-text;
+        width: 475px;
+        margin-bottom: 60px;
+      }
+    }
+
+    .about-us-description {
+      width: 401px;
+
+      font-size: 18px;
+      font-family: Gilroy, sans-serif;
+      color: @second-text;
+      line-height: 1.556;
+    }}
+
+    .about-us-img {
+      display: flex;
+      align-items: flex-end;
+      justify-items: end;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+
+.advantages {
+  background-color: @second-color;
+
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 88px;
+    .main-container();
+
+    .about-us-advantage {
+      padding-top: 88px;
+
+      .number-background {
+        border-radius: 50%;
+        background-color: rgb(130, 19, 40);
+        width: 70px;
+        height: 70px;
+        margin-bottom: 10px;
+        transition: background-color .3s;
+
+        .advantage-number {
+          font-size: 60px;
+          color: @main-text-color;
+          text-align: center;
+          padding-top: 10px;
+          font-family: GilroyExtraBold, sans-serif;
+          transition: color .3s;
+
+        }
+      }
+
+      .advantage-title {
+        font-size: 20px;
+        font-family: GilroyExtraBold, sans-serif;
+        color: @second-text;
+        margin-bottom: 19px;
+      }
+
+      .advantage-description {
+        font-size: 15px;
+        font-family: GilroyMedium, sans-serif;
+        color: @second-text;
+        line-height: 1.333;
+        width: 220px;
+        padding-bottom: 120px;
+      }
+
+      &:hover .number-background {
+        background-color: @main-color;
+      }
+
+      &:hover .advantage-number {
+        color: #821328;
+      }
+    }
+
+  }
+}
+
+
+.assortment {
+  background-color: @main-color;
+
+  .container {
+    .main-container();
+
+
+    .assortment-title {
+      text-align: center;
+      padding-top: 120px;
+      font-size: 45px;
+      font-family: Tavolga, sans-serif;
+      color: @main-text-color;
+      margin-bottom: 143px;
+    }
+
+    .macaroon-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      padding-bottom: 120px;
+      justify-items: center;
+    }
+
+    .macaroon-card {
+      display: flex;
+      width: 253px;
+      height: 226px;
+      flex-wrap: wrap;
+      border-radius: 20px;
+      border: 2px solid @main-text-color;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      position: relative;
+      padding: 0 21px 27px 21px;
+      box-sizing: border-box;
+
+      &:hover img {
+        transform: scale(1.2);
+      }
+
+      img {
+        position: absolute;
+        right: 30px;
+        top: -60px;
+        transition: transform 0.25s;
+      }
+
+      .macaroon-title {
+        font-size: 18px;
+        font-family: Tavolga, sans-serif;
+        color: @main-text-color;
+        margin-bottom: 26px;
+      }
+
+      .box-for-order {
+        display: flex;
+
+        .price-piece {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          margin-right: 26px;
+          width: 57px;
+
+          .macaroon-piece, .macaroon-price {
+            font-size: 15px;
+            font-family: Gilroy, sans-serif;
+            color: @main-text-color;
+          }
+        }
+
+        .btn-order {
+          width: 130px;
+          padding: 20px 29px;
+        }
+      }
+    }
+  }
+}
+
+
+.order {
+  background: @second-color;
+
+  .container {
+    display: flex;
+    .main-container();
+
+    .img-container {
+      position: relative;
+
+      .strawberry {
+        position: absolute;
+        top: 130px;
+        left: -50px;
+        animation: strawberry-animation 2s infinite;
+      }
+
+      @keyframes strawberry-animation {
+        0% {
+          transform: translate3d(50px, 40px, 0px);
+          animation-timing-function: ease-in;
+        }
+        50% {
+          transform: translate3d(50px, 50px, 0px);
+          animation-timing-function: ease-out;
+        }
+        100% {
+          transform: translate3d(50px, 40px, 0px);
+        }
+      }
+
+      .macaroon-tower {
+        padding-top: 168px;
+        margin-right: 162px;
+      }
+    }
+
+    .order-macaroon {
+      display: flex;
+      flex-direction: column;
+      width: 406px;
+      padding-top: 98px;
+      position: relative;
+      padding-bottom: 120px;
+
+      .title-order-macaroon {
+        font-size: 45px;
+        font-family: Tavolga, sans-serif;
+        color: @second-text;
+        margin-bottom: 41px;
+      }
+
+      .order-description {
+        font-size: 18px;
+        font-family: Gilroy, sans-serif;
+        color: @second-text;
+        line-height: 1.556;
+        margin-bottom: 48px;
+      }
+
+      .order-h3 {
+        margin-bottom: 23px;
+        font-size: 18px;
+        font-family: Gilroy, sans-serif;
+        color: rgb(18, 10, 6);
+      }
+
+      .placeholder {
+        font-size: 15px;
+        font-family: GilroyBold, sans-serif;
+        padding: 19px 25px;
+        border: 2px solid rgb(119, 10, 29);
+        border-radius: 30px;
+        width: 294px;
+        margin-bottom: 15px;
+        box-sizing: border-box;
+        background-color: rgb(254, 239, 238);
+
+        &::placeholder {
+          color: rgb(119, 10, 29);
+        }
+
+        &:focus {
+          border: 2px solid rgb(119, 10, 29);
+        }
+
+        &:active {
+          border: 2px solid rgb(119, 10, 29);
+        }
+
+        &:first-of-type {
+          margin-bottom: 40px;
+        }
+      }
+
+      .btn-make-order {
+        width: 294px;
+      }
+
+      .mini-strawberry {
+        position: absolute;
+        bottom: 245px;
+        right: 0;
+        animation: strawberry-animation 2s infinite;
+      }
+    }
+  }
+}
+
+
+.footer {
+  background-color: @footer-background;
+
+  .container {
+    .main-container();
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 73px 15px 92px 15px;
+
+
+    .logo-2 {
+      margin-bottom: 19px;
+    }
+
+    .privacy {
+      font-size: 12px;
+      font-family: Gilroy, sans-serif;
+      color: rgb(227, 172, 180);
+    }
+
+    .instagram-img {
+      margin-bottom: 15px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .instagram-description {
+      text-align: center;
+      font-size: 16px;
+      font-family: GilroyBold, sans-serif;
+      color: @main-text-color;
+    }
+  }
+
+  .present {
+    position: fixed;
+    bottom: 48px;
+    right: 48px;
+    border: 1px solid rgba(130, 19, 40, 0.5);
+    border-radius: 50%;
+    height: 90px;
+    width: 90px;
+    z-index: 5;
+    background: linear-gradient(45deg, rgb(113, 8, 30) 0%, rgb(215, 72, 92) 100%);
+
+
+  img {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+  }
+
+  &:hover {
+    box-shadow: 0 0 12.6px 2.4px rgba(130, 19, 40, 0.5);
+  }
+
+  .bubble {
+    position: relative;
+    background: #feefee;
+    width: 159px;
+    border-radius: 10px;
+    padding: 15px 10px;
+    border: 2px solid #770a1c;
+    right: 188px;
+    bottom: 40px;
+    box-sizing: border-box;
+    font-family: GilroyMedium, sans-serif;
+    color: rgb(119, 10, 29);
+    font-size: 15px;
+    line-height: 1;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 1s, transform 1s;
+
+    &:before {
+      content: '';
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      border-style: solid;
+      border-color: #770a1c;
+      border-width: 2px 2px 0 0;
+      transform: rotate(45deg);
+      top: 20px;
+      right: -10px;
+      background-color: @second-color;
+
+    }
+  }
+
+  &:hover .bubble {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+}
+
+
+.error-input {
+  font-family: Gilroy, sans-serif;
+  margin-bottom: 15px;
+  display: none;
+  color: red;
+  font-size: 15px;
+  padding-left: 10px;
+}
+
+.loader {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.6);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.lds-ripple {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.lds-ripple div {
+  position: absolute;
+  border: 4px solid @main-color;
+  opacity: 1;
+  border-radius: 50%;
+  animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+.lds-ripple div:nth-child(2) {
+  animation-delay: -0.5s;
+}
+
+@keyframes lds-ripple {
+  0% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  4.9% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  5% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 0;
+    left: 0;
+    width: 72px;
+    height: 72px;
+    opacity: 0;
+  }
+}
+
+
+.popup {
+  display: none;
+
+  .popup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 406px;
+
+    .popup-text {
+      font-family: GilroyBold, sans-serif;
+      font-size: 20px;
+    }
+  }
+}
+
+
+@import "adaptive";
+@import "Theme";
